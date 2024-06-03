@@ -1,0 +1,63 @@
+﻿@model IEnumerable<NVTBaiDanhGiaGiuaKy.Models.NvtProduct>
+
+@{
+    ViewBag.Title = "NvtIndex";
+}
+
+<h2>NvtIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "NVTCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NvtId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvtFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvtImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvtQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvtPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvtisActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvtId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvtFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvtImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvtQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvtPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvtisActive)
+        </td>
+        <td>
+            @Html.ActionLink("NVT:Edit", "NVTEdit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("NVT:Details", "NVTDetails", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("NVT:Delete", "NVTDelete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
